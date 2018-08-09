@@ -28,6 +28,8 @@ namespace Automa.Benchmarks
 
         protected virtual void Prepare() { }
 
+        protected virtual void Free() { }
+
         private IEnumerable<BenchmarkCase> SelectCases(IEnumerable<MethodInfo> methods)
         {
             foreach (var methodInfo in methods)
