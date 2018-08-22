@@ -82,6 +82,7 @@ namespace Automa.Benchmarks
                 stopwatch.Stop();
                 results[index] = new BenchmarkResult(benchmarkCase.Name, stopwatch.Elapsed);
             }
+            Free();
             return results;
         }
 
