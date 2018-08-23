@@ -9,7 +9,7 @@ namespace Automa.Benchmarks
             for (int i = 0; i < results.Length; i++)
             {
                 var result = results[i];
-                Console.WriteLine($"{result.Name,-20} {result.Duration,16:c}");
+                Console.WriteLine($"{result.Name,-20} {result.Duration,16:c} {result.MemoryAllocated,16}");
             }
         }
     }

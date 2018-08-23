@@ -6,11 +6,13 @@ namespace Automa.Benchmarks
     {
         public readonly string Name;
         public readonly TimeSpan Duration;
+        public readonly long MemoryAllocated;
 
-        public BenchmarkResult(string name, TimeSpan duration)
+        public BenchmarkResult(string name, TimeSpan duration, long memoryAllocated)
         {
             Name = name;
             Duration = duration;
+            MemoryAllocated = memoryAllocated;
         }
     }
 }

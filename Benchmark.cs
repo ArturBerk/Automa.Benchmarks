@@ -74,13 +74,15 @@ namespace Automa.Benchmarks
                 GC.Collect();
                 GC.WaitForPendingFinalizers();
                 GC.Collect();
+                var totalMemory = GC.GetTotalMemory(true);
                 stopwatch.Restart();
                 for (int i = 0; i < iterationCount; i++)
                 {
                     benchmarkCase.Execute();
                 }
                 stopwatch.Stop();
-                results[index] = new BenchmarkResult(benchmarkCase.Name, stopwatch.Elapsed);
+                var totalMemoryAfterTest = GC.GetTotalMemory(false);
+                results[index] = new BenchmarkResult(benchmarkCase.Name, stopwatch.Elapsed, totalMemoryAfterTest - totalMemory);
             }
             Free();
             return results;
